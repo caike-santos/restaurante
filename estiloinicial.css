@@ -233,7 +233,8 @@ iframe{
 /* 1. O contêiner que define a ÁREA VISÍVEL. Agora com position: relative */
 .carousel-wrapper {
     position: relative; /* Essencial para posicionar os botões */
-    max-width: 800px;
+    max-width: 600px;
+    max-height: 600px;
     width: 90%;
     overflow: hidden; /* Continua escondendo o que está fora */
     border-radius: 10px;

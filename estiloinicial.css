@@ -255,9 +255,10 @@ iframe{
 
 /* 4. A imagem dentro de cada item */
 .carousel__item img {
-    width: 70%;
+    width: 100%;
     height: auto;
     display: block;
+    border-radious: 50%;
 }
 
 /* 5. Estilo dos botões */

@@ -226,3 +226,45 @@ iframe{
 #mapa{
     background-color: #F5EADA;
 }
+/* 1. O contêiner que define a ÁREA VISÍVEL do carrossel */
+.carousel-wrapper {
+    max-width: 800px; /* Largura máxima do carrossel */
+    width: 90%;       /* Largura em telas menores */
+    overflow: hidden; /* Esconde o conteúdo que transborda (as outras imagens) */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. O contêiner que VAI ROLAR e contém todos os itens */
+.carousel {
+    display: flex; /* Alinha os itens lado a lado */
+
+    /* Comportamento da rolagem */
+    overflow-x: auto;   /* Permite a rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Efeito de "ímã": a rolagem é forçada a parar no início de um item */
+    scroll-behavior: smooth; /* Animação suave ao rolar */
+
+    /* Esconde a barra de rolagem (opcional, mas melhora a estética) */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Esconde a barra de rolagem para Chrome, Safari and Opera */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* 3. Cada ITEM (slide) individual do carrossel */
+.carousel__item {
+    flex: 0 0 100%; /* Cada item ocupa 100% da largura do contêiner visível */
+    width: 100%;
+    scroll-snap-align: start; /* Alinha o início do item com o início do contêiner ao "travar" */
+}
+
+/* 4. A IMAGEM dentro de cada item */
+.carousel__item img {
+    width: 100%;   /* Imagem ocupa toda a largura do item */
+    height: auto;  /* Altura se ajusta para manter a proporção */
+    display: block; /* Remove espaços extras abaixo da imagem */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço, mesmo que corte um pouco */
+}

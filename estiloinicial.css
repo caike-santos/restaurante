@@ -236,7 +236,7 @@ iframe{
     max-width: 500px;
     width: 100%;
     overflow: hidden; /* Continua escondendo o que está fora */
-    border-radius: 10px;
+    border-radius: 30%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 

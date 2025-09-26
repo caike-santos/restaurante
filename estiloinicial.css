@@ -48,10 +48,14 @@ menu a{
     margin-right: 10px;
     color: black;
 }
+
 menu a:hover{
     color: red;
     transform: translate(-3px, -3px);
     transition: all .5s;
+}
+menu a:active {
+    transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
 }
 #destaque{
     color: black;
@@ -60,6 +64,9 @@ menu a:hover{
     color: red;
     transform: translate(-3px, -3px);
     transition: all .5s;
+}
+#destaque:active {
+    transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
 }
 
 main{

@@ -44,3 +44,21 @@ prevBtn.addEventListener('click', () => {
         moveToSlide(slideCount - 1);
     }
 });
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // Se o elemento estiver visível na tela
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } 
+        // Opcional: para a animação acontecer sempre que rolar para cima e para baixo
+        // else {
+        //     entry.target.classList.remove('show');
+        // }
+    });
+});
+
+// Seleciona todos os elementos com a classe 'hidden'
+const hiddenElements = document.querySelectorAll('.hidden');
+
+// Pede ao observador para "observar" cada um desses elementos
+hiddenElements.forEach((el) => observer.observe(el));

@@ -17,28 +17,28 @@
     <link rel="shortcut icon" href="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo">
+    <header id="inicio">
+        <a href="#inicio"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo"></a>
     </header>
     <menu>
             <div>
-                <a href="">Início</a>
+                <a href="#inicio">Início</a>
                 <a href="cardapio.html">Cardápio</a>
                 <a href="">Sobre Nós</a>
-                <a href="">Galeria</a>
-                <a href="">Contato</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#endereço">Contato</a>
             </div>
             <div><a href="" id="destaque">Reservar Mesa</a></div>
         </menu>
     <main>
-        <section id="principal">
+        <section id="principal" class="hidden">
             <h1>Comida Brasileira com Alma e Sabor</h1>
             <h2>Ingredientes frescos, receitas de família e um ambiente acolhedor</h2>
             <div id="centralizar">
                 <a href="cardapio.html">Ver Cardapio</a>
                 <a href="">Reservar Agora</a></div>
         </section>
-        <section id="pratos">
+        <section id="pratos" class="hidden">
             <h1>Pratos principais</h1>
             <div id="p1">
                 <div>
@@ -62,14 +62,14 @@
             </div>
             <div id="completo"><a href="cardapio.html">Ver Cardápio Completo</a></div>
         </section>
-        <section id="depoimentos">
+        <section id="depoimentos" class="hidden">
             <h1>Depoimentos e Avaliações</h1>
             <h2>Mariana</h2>
             <p>"Uma noite inesquecível! O ambiente é extremamente acolhedor e charmoso, perfeito para uma ocasiao especial. Fomos surpreendidos pelo atendimento impecável, a equipe foi muito atenciosa do início ao fim. Pedi o Cupim Assado e estava divino, desmanchando na boca. Com certeza virou meu restaurante favorito na cidade. Recomendo de olhos fechados!"</p>
             <h2>Pedro</h2>
             <p>"Sem dúvida, o melhor hambúrguer que já comi! Pedi o 'Gorgon On Fire' é a combinação de sabores é simplesmente perfeita. A carne veio no ponto certo, suculenta, e o queijo gorgonzola estava na medida, sem roubar o sabor do resto."</p>
         </section>
-        <section id="endereço">
+        <section id="endereço" class="hidden">
             <div id="diminuir">
                 <h1>Nosso Endereço:</h1>
                 <a target="_blank" href="https://www.google.com/maps/place/R.+Volunt%C3%A1rios+da+P%C3%A1tria,+456+-+Botafogo,+Rio+de+Janeiro+-+RJ,+22270-010/@-22.9558107,-43.1973507,17z/data=!3m1!4b1!4m5!3m4!1s0x997fdf42985e79:0x44e6cad39a8698e4!8m2!3d-22.9558107!4d-43.1973507?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D">
@@ -88,8 +88,9 @@
                 <p>contato@fogoebrasa.com.br</p>
             </div>
         </section>
-        <section id="mapa"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.8483712245225!2d-43.197350699999994!3d-22.955810700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997fdf42985e79%3A0x44e6cad39a8698e4!2sR.%20Volunt%C3%A1rios%20da%20P%C3%A1tria%2C%20456%20-%20Botafogo%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022270-010!5e0!3m2!1spt-BR!2sbr!4v1758720222731!5m2!1spt-BR!2sbr" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></section>
-        <section id="galeria">
+        <section id="mapa" class="hidden"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.8483712245225!2d-43.197350699999994!3d-22.955810700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997fdf42985e79%3A0x44e6cad39a8698e4!2sR.%20Volunt%C3%A1rios%20da%20P%C3%A1tria%2C%20456%20-%20Botafogo%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022270-010!5e0!3m2!1spt-BR!2sbr!4v1758720222731!5m2!1spt-BR!2sbr" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></section>
+        <section id="galeria" class="hidden">
+            <h1>Galeria:</h1>
              <div class="carousel-wrapper">
         <div class="carousel">
             <div class="carousel__item">

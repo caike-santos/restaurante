@@ -5,6 +5,9 @@
     padding: 0px;
     box-sizing: 0px;
 }
+html {
+  scroll-behavior: smooth;
+}
 h1, h2{
     /* font-family: "Josefin Sans", sans-serif; */
     font-family: "Arvo", serif;
@@ -16,11 +19,15 @@ header{
     padding-top: 20px;
     background-color: burlywood;
     background-image: url(imagens/fundo.png);
-    height: 561px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 menu{
     display: flex;
@@ -62,7 +69,7 @@ main h1, h2, a, p{
     padding: 10px;
 }
 header img{
-    width: 150px;
+    width: 250px;
     border-radius: 50%;
     display: block;
     margin: auto;
@@ -183,17 +190,7 @@ header img{
         }
     }
 }
-    }
-    & img{
-        width: 20vw;
-        border-radius: 50%;
-        margin-bottom: 20px;
-    }
-}
-.fotos{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 footer{
     background-color: #695643;
     padding: 10px;
@@ -227,7 +224,8 @@ iframe{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 70vh;
+    background-color: #F9F1E9;
 }
 
 /* 1. O contêiner que define a ÁREA VISÍVEL. Agora com position: relative */
@@ -236,7 +234,7 @@ iframe{
     max-width: 500px;
     width: 100%;
     overflow: hidden; /* Continua escondendo o que está fora */
-    border-radius: 30%;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -288,4 +286,16 @@ iframe{
 
 .carousel-button--right {
     right: 1rem;
+}
+/* Estado inicial (escondido) de qualquer elemento que terá a animação */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px); /* Opcional: faz o elemento vir de baixo */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Estado final (visível) que o JavaScript vai adicionar */
+.show {
+  opacity: 1;
+  transform: translateY(0); /* Volta para a posição original */
 }

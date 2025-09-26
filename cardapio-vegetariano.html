@@ -18,19 +18,19 @@
 </head>
 <body>
 
-    <header style="height: 400px;">
-        <img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo">
+    <header>
+        <a href="index.html"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo"></a>
         <!-- <a href="index.html" class="botao-voltar">← Voltar ao Menu Principal</a> -->
         <h1>Menu Vegetariano</h1>
         <p>Opções saborosas sem carne.</p>
     </header>
 
     <main>
-        <section id="entradas-veg">
+        <section id="entradas-veg" class="hidden">
             <h2>Entradas</h2>
             <div class="cardapio-itens">
                 <div class="item-card">
-                    <img src="espetinhov.jpg" alt="Espetinho de Legumes Grelhados">
+                    <img src="imagens/espetinhov.jpg" alt="Espetinho de Legumes Grelhados">
                     <div class="item-info">
                         <h3>Espetinho de Legumes Grelhados</h3>
                         <p class="descricao"> Legumes como abobrinha, pimentão, cebola roxa e cogumelos são cortados em cubos, 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="item-card">
-                    <img src="crostini.jpg" alt="Crostini com Patê de Azeitonas ">
+                    <img src="imagens/crostini.jpg" alt="Crostini com Patê de Azeitonas ">
                     <div class="item-info">
                         <h3>Crostini com Patê de Azeitonas</h3>
                         <p class="descricao"> Finas fatias de pão rústico são levemente tostadas e, em seguida, 
@@ -51,7 +51,7 @@
                 </div>
                 
                 <div class="item-card">
-                    <img src="Saladacaprese.jpg" alt="Salada Caprese">
+                    <img src="imagens/Saladacaprese.jpg" alt="Salada Caprese">
                     <div class="item-info">
                         <h3>Salada Caprese</h3>
                         <p class="descricao"> Fatias de tomate fresco, mussarela de búfala e folhas frescas de manjericão</p>
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="item-card">
-                    <img src="bruchetatomate.jpg" alt="Bruschetta de tomate">
+                    <img src="imagens/bruchetatomate.jpg" alt="Bruschetta de tomate">
                     <div class="item-info">
                         <h3>Bruschetta de tomate</h3>
                         <p class="descricao"> Fatias de pão italiano crocante com tomate fresco, manjericão e azeite de oliva</p>
@@ -70,11 +70,11 @@
             </div>
         </section>
 
-        <section id="principais-veg">
+        <section id="principais-veg" class="hidden">
             <h2>Pratos Principais</h2>
             <div class="cardapio-itens">
                 <div class="item-card">
-                    <img src="berinjela.jpg" alt="Berinjela Recheada com Quinoa, Tomates Secos e Queijo Feta">
+                    <img src="imagens/berinjela.jpg" alt="Berinjela Recheada com Quinoa, Tomates Secos e Queijo Feta">
                     <div class="item-info">
                         <h3>Berinjela Recheada com Quinoa, Tomates Secos e Queijo Feta</h3>
                         <p class="descricao"> Meias berinjelas assadas e recheadas com uma mistura de quinoa, tomate seco, 
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="item-card">
-                    <img src="risoto.jpg" alt="Risoto de Cogumelos Selvagens">
+                    <img src="imagens/risoto.jpg" alt="Risoto de Cogumelos Selvagens">
                     <div class="item-info">
                         <h3>Risoto de Cogumelos Selvagens</h3>
                         <p class="descricao"> Arroz Arborio, cozido lentamente com um caldo de vegetais para garantir a cremosidade. 
@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="item-card">
-                    <img src="spageti.jpg" alt="Spaghetti al Limone">
+                    <img src="imagens/spageti.jpg" alt="Spaghetti al Limone">
                     <div class="item-info">
                         <h3>Spaghetti al Limone</h3>
                         <p class="descricao"> Uma massa delicada com um molho de azeite, suco de limão, queijo parmesão 
@@ -104,7 +104,7 @@
                 </div>
                 
                 <div class="item-card">
-                    <img src="pesto.jpg" alt="Spaghetti ao Pesto de Manjericão">
+                    <img src="imagens/pesto.jpg" alt="Spaghetti ao Pesto de Manjericão">
                     <div class="item-info">
                         <h3>Spaghetti ao Pesto de Manjericão</h3>
                         <p class="descricao">Uma massa fresca servida com molho pesto tradicional, à base de manjericão, 
@@ -133,6 +133,27 @@
                 <p>&copy; 2025 Fogo&Brasa</p>
             </div>
     </footer>
+    <script>
+        // =========================
+// CÓDIGO DA ANIMAÇÃO SCROLL
+// =========================
 
+const observer = new IntersectionObserver((entries) => {
+    // Itera sobre cada 'entrada' (elemento) que o observador está vigiando
+    entries.forEach((entry) => {
+        // Se o elemento está agora visível na tela...
+        if (entry.isIntersecting) {
+            // ...adiciona a classe 'show' para torná-lo visível.
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+// Seleciona todos os elementos no HTML que têm a classe 'hidden'
+const hiddenElements = document.querySelectorAll('.hidden');
+
+// Manda o observador vigiar cada um desses elementos
+hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>

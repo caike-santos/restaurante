@@ -3,37 +3,59 @@
     padding: 0;
     box-sizing: border-box;
 }
-h1, h2, h3, h4{
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
     /* font-family: "Josefin Sans", sans-serif; */
     font-family: "Arvo", serif;
 }
-p, a, button{
+
+p, a, button {
     font-family: "Nunito Sans", sans-serif;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: burlywood;
     color: #333;
 }
-header img{
-    width: 150px;
+
+header img {
+    width: 250px;
     border-radius: 50%;
     display: block;
     margin: auto;
 }
-header a{
+
+/* --- CORREÇÃO AQUI --- */
+#menu-vegetariano {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-top: 10px;
     text-decoration: none;
-       background-color: rgb(170, 67, 49);
-       color: white;
-       border-radius: 5px;
-       padding: 8px;
-    }
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    border: 2px solid rgb(170, 67, 49);
+    transition: all .5s; /* A transição deve estar no estado base */
+}
+
+#menu-vegetariano:hover {
+    transform: translate(-3px, -3px);
+    color: black;
+}
+
+/* --- CORREÇÃO AQUI --- */
 header {
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */ /* Removido para melhor centralização */
     gap: 20px;
     text-align: center;
     padding: 40px 20px;
@@ -42,9 +64,15 @@ header {
     background-image: url(imagens/fundo.png);
     background-size: cover;
     background-position: bottom;
-    & p{
-        color: white;
-    }
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    font-size: 1.2em;
+    color: white;
 }
 
 header h1 {
@@ -78,7 +106,7 @@ section h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Centraliza os itens por padrão */
+    justify-content: center;
 }
 
 .item-card {
@@ -160,26 +188,32 @@ section h2 {
     color: #888;
 }
 
-footer{
+/* --- CORREÇÃO AQUI --- */
+footer {
     background-color: #695643;
     padding: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    & img{
-         width: 100px;
+}
+
+footer img {
+    width: 100px;
     border-radius: 50%;
-    }
-    & h1, p{
-        font-size: .9rem;
-        color: white;
-    }
-    & a{
-        text-decoration: none;
-        &:hover{
-            color: blue;
-        }
-    }
+}
+
+footer h1, footer p {
+    font-size: .9rem;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white; /* Adicionado para garantir que o link seja branco inicialmente */
+}
+
+footer a:hover {
+    color: blue;
 }
 
 @media (min-width: 600px) {
@@ -189,7 +223,6 @@ footer{
     #entradas .cardapio-itens {
         justify-content: flex-start;
     }
-    
 }
 
 @media (min-width: 900px) {
@@ -199,36 +232,31 @@ footer{
     #entradas .cardapio-itens {
         justify-content: flex-start;
     }
-    
 }
 
-/* Estilo para o container do botão, centralizando-o */
 .menu-nav {
     text-align: center;
     margin: 20px 0;
 }
 
-/* Estilo do botão em si */
 .botao-menu-veg {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #4CAF50; /* Um tom de verde para representar o tema vegetariano */
+    background-color: #4CAF50;
     color: white;
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
-    border-radius: 8px; /* Cantos levemente arredondados */
+    border-radius: 8px;
     border: 2px solid #4CAF50;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Efeito de transição suave */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse por cima do botão */
 .botao-menu-veg:hover {
     background-color: #5cb85c;
     border-color: #5cb85c;
 }
 
-/* Estilo para o botão de voltar, se aplicável */
 .botao-voltar {
     display: inline-block;
     padding: 10px 20px;
@@ -243,4 +271,15 @@ footer{
 .botao-voltar:hover {
     background-color: #4CAF50;
     color: white;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }

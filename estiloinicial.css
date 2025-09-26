@@ -233,9 +233,8 @@ iframe{
 /* 1. O contêiner que define a ÁREA VISÍVEL. Agora com position: relative */
 .carousel-wrapper {
     position: relative; /* Essencial para posicionar os botões */
-    max-width: 600px;
-    max-height: 600px;
-    width: 90%;
+    max-width: 200px;
+    width: 70%;
     overflow: hidden; /* Continua escondendo o que está fora */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -250,13 +249,13 @@ iframe{
 
 /* 3. Cada item do carrossel */
 .carousel__item {
-    flex: 0 0 100%; /* Cada item ocupa 100% da largura */
-    width: 100%;
+    flex: 0 0 70%; /* Cada item ocupa 100% da largura */
+    width: 70%;
 }
 
 /* 4. A imagem dentro de cada item */
 .carousel__item img {
-    width: 100%;
+    width: 70%;
     height: auto;
     display: block;
 }

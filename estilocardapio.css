@@ -20,7 +20,7 @@ p, a, button {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: burlywood;
+    background-color: rgb(255, 211, 154);
     color: #333;
 }
 
@@ -76,11 +76,47 @@ header p {
 }
 
 header h1 {
-    font-size: 2.5em;
+    /* Mínimo de 2em, ideal de 5vw (5% da largura da tela), máximo de 2.5em */
+    font-size: clamp(2em, 5vw, 2.5em);
     color: #c4c3c3;
     margin-bottom: 10px;
 }
 
+section h2 {
+    /* Mínimo de 1.5em, ideal de 4vw, máximo de 2em */
+    font-size: clamp(1.5em, 4vw, 2em);
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+menu{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* margin-top: 365px; */
+    background-color: rgba(222, 184, 135, 0.363);
+    padding: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+menu a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: black;
+}
+
+menu a:hover{
+    color: red;
+    transform: translate(-3px, -3px);
+    transition: all .5s;
+}
+menu a:active {
+    transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
+}
 main {
     max-width: 1000px;
     margin: 20px auto;
@@ -94,14 +130,6 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-section h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #444;
-    margin-bottom: 20px;
-}
-
 .cardapio-itens {
     display: flex;
     flex-wrap: wrap;
@@ -170,12 +198,12 @@ section h2 {
 }
 
 .vinho-item {
-    margin-bottom: 10px;
-    display: grid;
-    grid-template-columns: 200px 350px auto;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
+    display: flex; /* Usamos flexbox para o layout de coluna */
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
 
 .vinho-item h4 {
@@ -186,17 +214,48 @@ section h2 {
 .vinho-item .info {
     font-size: 0.9em;
     color: #888;
+    margin: 4px 0; /* Adiciona um pequeno espaçamento */
+}
+/* O preço já está com a classe .preco, que será estilizada normalmente */
+
+
+/* AGORA, para telas maiores (tablets e desktops), voltamos ao layout de grade */
+@media (min-width: 768px) {
+    .vinho-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; /* Colunas flexíveis em vez de pixels */
+        align-items: center;
+        padding: 5px 0;
+        margin-bottom: 10px;
+        border-bottom: none;
+    }
+
+    .vinho-item .info {
+        margin: 0; /* Remove a margem extra */
+    }
 }
 
 /* --- CORREÇÃO AQUI --- */
 footer {
     background-color: #695643;
-    padding: 10px;
+    padding: 20px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column; /* Empilha os itens */
+    align-items: center;   /* Centraliza tudo */
+    text-align: center;
+    gap: 20px; /* Adiciona um espaço entre os itens empilhados */
 }
 
+/* Para telas maiores, volta ao layout original */
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row; /* Itens lado a lado */
+        justify-content: space-around;
+        text-align: left;
+    }
+}
+
+/* Essas regras foram movidas para fora para não se repetirem */
 footer img {
     width: 100px;
     border-radius: 50%;
@@ -209,7 +268,7 @@ footer h1, footer p {
 
 footer a {
     text-decoration: none;
-    color: white; /* Adicionado para garantir que o link seja branco inicialmente */
+    color: white;
 }
 
 footer a:hover {

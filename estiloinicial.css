@@ -3,109 +3,208 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: 0px;
+    box-sizing: border-box; /* CORRIGIDO */
 }
 html {
   scroll-behavior: smooth;
 }
 h1, h2{
-    /* font-family: "Josefin Sans", sans-serif; */
     font-family: "Arvo", serif;
 }
-p, a{
+p, a, button{ /* Adicionado button */
     font-family: "Nunito Sans", sans-serif;
 }
+
+/* --- ESTILOS DO HEADER --- */
 header{
-    padding-top: 20px;
+    /* Removido o conteúdo do header antigo para dar lugar ao novo menu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: burlywood;
+    padding: 35px 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: sticky; /* Menu fixo no topo */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all .5s;
+}
+
+header .logo img {
+    width: 100px; /* Logo menor para caber na barra */
+    border-radius: 50%;
+}
+
+/* --- ESTILOS DA NAVEGAÇÃO --- */
+#menu-navegacao a{
+    text-decoration: none;
+    margin-right: 15px;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#menu-navegacao a:hover{
+    color: red;
+    transform: translateY(-3px);
+    transition: all .5s;
+}
+
+#destaque{
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+}
+#destaque:hover{
+    color: black;
+}
+
+/* --- BOTÃO MOBILE (ESCONDIDO POR PADRÃO) --- */
+#btn-mobile {
+    display: none;
+}
+
+
+/* ########################################## */
+/* ### RESPONSIVIDADE (A MÁGICA ACONTECE AQUI) ### */
+/* ########################################## */
+@media (max-width: 768px) {
+    /* 1. O botão hambúrguer aparece */
+    #btn-mobile {
+        display: flex;
+        align-items: center;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+         margin-left: auto; 
+    }
+
+    #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #hamburger::after, #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    /* 2. O menu de navegação some */
+    #menu-navegacao {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px; /* Altura do header */
+        right: 0px;
+        background: burlywood;
+        height: 0; /* Começa fechado */
+        transition: height .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #menu-navegacao a {
+        display: block;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    
+    /* 3. Estilos para quando o menu estiver ATIVO (classe .active) */
+    header.active #menu-navegacao {
+        height: calc(100vh - 70px); /* Ocupa a altura da tela */
+        visibility: visible;
+        overflow-y: auto;
+    }
+    
+    header.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    header.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    header.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    #menu-navegacao a {
+    text-align: center;
+    font-size: 1.2rem; /* Aumenta um pouco a fonte para toque */
+}
+
+/* Esconde o logo quando o menu está aberto para um visual mais limpo */
+header.active .logo {
+    display: none;
+}
+
+/* Garante que o botão X fique posicionado corretamente mesmo sem o logo */
+header.active #btn-mobile {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    z-index: 1001; /* Garante que fique acima do menu */
+}
+}
+
+
+/* ########################################## */
+/* ### SEUS ESTILOS ANTIGOS (MANTIDOS) ### */
+/* ########################################## */
+
+main{
+    margin-bottom: 10px;
+    position: relative; /* <<< ADICIONE ESTA LINHA */
+    z-index: 1;
+}
+main h1, main h2, main a, main p{ /* Especificando para não afetar o header */
+    padding: 10px;
+}
+
+#principal{
+    background-color: #F5EADA;
+    padding: 80px 20px;
+    text-align: center;
     background-image: url(imagens/fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 90vh;
 }
-menu{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    /* margin-top: 365px; */
-    background-color: burlywood;
-    padding: 8px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#principal h1{
+    font-size: 2.5rem;
+    color: white;
+}
+#principal h2{
     font-size: 1.2rem;
-    font-weight: bold;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    color: white;
 }
-menu a{
+#principal a{
     text-decoration: none;
-    margin-right: 10px;
-    color: black;
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
 }
-
-menu a:hover{
-    color: red;
-    transform: translate(-3px, -3px);
+#principal a:hover{
+    color: black;
+    transform: translateY(-3px);
     transition: all .5s;
 }
-menu a:active {
-    transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
-}
-#destaque{
-    color: black;
-}
-#destaque:hover{
-    color: red;
-    transform: translate(-3px, -3px);
-    transition: all .5s;
-}
-#destaque:active {
-    transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
-}
 
-main{
-    margin-bottom: 10px;
-}
-main h1, h2, a, p{
-    padding: 10px;
-}
-header img{
-    width: 250px;
-    border-radius: 50%;
-    display: block;
-    margin: auto;
-}
-#principal{
-    
-    height: 200px;
-    background-color: #F5EADA;
-    padding: 20px;
-    & h1{
-        text-align: center;
-        font-size: 1.5rem;
-    }
-    & h2{
-        text-align: center;
-        font-size: 1rem;
-    }
-    & a{
-        text-decoration: none;
-       background-color: rgb(170, 67, 49);
-       color: white;
-       border-radius: 5px;
-    }
-    & a:hover{
-        color: black;
-        transform: translateY(-3px);
-        transition: all .5s;
-}
-}
 #centralizar{
     margin-top: 50px;
     display: flex;
@@ -115,116 +214,128 @@ header img{
 #pratos{
     background-color: #F9F1E9;
     text-align: center;
-    height: 700px;
-    & h1{
-        text-align: center;
-    }
-    & img{
-        width: 275px;
-        height: 183px;
-    }
-    & a{
-        text-decoration: none;
-         background-color: rgb(170, 67, 49);
-       color: white;
-       border-radius: 5px;
-       transform: translateY(-10px);
-    }
-     & a:hover{
-        color: black;
-        transform: translateY(-13px);
-        transition: all .5s;
+    padding: 40px 0;
 }
-    p{
-        text-align: center;
-        padding: 10px;
-        font-size: 1rem;
-        color: #333;
-        line-height: 1.5;
-        font-weight: bold;
-    }
+#pratos h1{
+    text-align: center;
 }
-#p1{
+#pratos img{
+    width: 275px;
+    height: 183px;
+    object-fit: cover; /* Garante que a imagem não distorça */
+}
+#pratos a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+}
+#pratos a:hover{
+    color: black;
+    transform: translateY(-3px);
+    transition: all .5s;
+}
+#pratos p{
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+#p1, #p2 {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-    
-}
-#p2{
-    display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    justify-content: center; /* Centraliza os itens */
+    gap: 20px; /* Espaçamento entre os pratos */
     margin-bottom: 20px;
 }
+
 #completo{
-    display: block;
-    transform: translateY(50px);
+    margin-top: 50px;
 }
 #depoimentos{
     display: flex;
     flex-flow: column;
     justify-content: center;
-    height: 400px;
     background-color: #F5EADA;
-    padding: 10px;
-    & h1{
-        text-align: center;
-    }
-    & p{
-        text-align: justify;
-        width: 70vw;
-        display: block;
-        margin: auto;
-    }
-    h2{
-        text-align: center;
-        font-size: 1.2rem;
-        color: #333;
-    }
+    padding: 40px 10px;
+}
+#depoimentos h1{
+    text-align: center;
+}
+#depoimentos p{
+    text-align: justify;
+    width: 90%;
+    max-width: 700px;
+    display: block;
+    margin: 10px auto;
+}
+#depoimentos h2{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
 }
 #endereço{
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
     background-color: #F9F1E9;
     padding: 30px;
+    text-align: center;
 }
 #diminuir{
     width: 300px;
-    & a{
-        text-decoration: none;
-        color: black;
-        &:hover{
-            color: blue;
-        }
+}
+#diminuir a{
+    text-decoration: none;
+    color: black;
+}
+#diminuir a:hover{
+    color: blue;
+}
+footer {
+    background-color: #695643;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    text-align: center;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
     }
 }
-
-footer{
-    background-color: #695643;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    & img{
-         width: 100px;
+footer img {
+    width: 100px;
     border-radius: 50%;
-    }
-    & h1, p{
-        font-size: .9rem;
-        color: white;
-    }
-    & a{
-        text-decoration: none;
-        &:hover{
-            color: blue;
-        }
-    }
+}
+footer h1, footer p {
+    font-size: .9rem;
+    color: white;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    color: blue;
 }
 iframe{
     display: block;
     margin: auto;
+    max-width: 100%; /* Garante que o mapa seja responsivo */
 }
 #mapa{
     background-color: #F5EADA;
+    padding: 20px 0;
 }
 #galeria {
     display: flex;
@@ -233,44 +344,33 @@ iframe{
     justify-content: center;
     min-height: 70vh;
     background-color: #F9F1E9;
+    padding: 20px 0;
 }
-
-/* 1. O contêiner que define a ÁREA VISÍVEL. Agora com position: relative */
 .carousel-wrapper {
-    position: relative; /* Essencial para posicionar os botões */
+    position: relative;
     max-width: 500px;
-    width: 100%;
-    overflow: hidden; /* Continua escondendo o que está fora */
+    width: 90%;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* 2. O "trilho" que se move. Não tem mais overflow. */
 .carousel {
     display: flex;
-    /* Adicionamos uma transição para o movimento ser suave */
     transition: transform 0.5s ease-in-out; 
 }
-
-/* 3. Cada item do carrossel */
 .carousel__item {
-    flex: 0 0 100%; /* Cada item ocupa 100% da largura */
+    flex: 0 0 100%;
     width: 100%;
 }
-
-/* 4. A imagem dentro de cada item */
 .carousel__item img {
     width: 100%;
     height: auto;
     display: block;
-    border-radious: 50%;
 }
-
-/* 5. Estilo dos botões */
 .carousel-button {
-    position: absolute; /* Posiciona os botões sobre o carrossel */
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente */
+    transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -282,27 +382,24 @@ iframe{
     font-size: 1.5rem;
     z-index: 10;
 }
-
 .carousel-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .carousel-button--left {
     left: 1rem;
 }
-
 .carousel-button--right {
     right: 1rem;
 }
-/* Estado inicial (escondido) de qualquer elemento que terá a animação */
 .hidden {
   opacity: 0;
-  transform: translateY(50px); /* Opcional: faz o elemento vir de baixo */
+  transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
-/* Estado final (visível) que o JavaScript vai adicionar */
 .show {
   opacity: 1;
-  transform: translateY(0); /* Volta para a posição original */
+  transform: translateY(0);
+}
+section[id] {
+    scroll-margin-top: 180px; /* Ajuste este valor se a altura do seu menu mudar */
 }

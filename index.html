@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina inicial</title>
+    <title>Pagina inicial | Fogo&Brasa</title>
     <link rel="stylesheet" href="estiloinicial.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,19 +17,22 @@
     <link rel="shortcut icon" href="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.ico" type="image/x-icon">
 </head>
 <body>
-    <header id="inicio">
-        <a href="#inicio"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy"></a>
+    <header id="header" role="banner">
+        <a href="#principal" class="logo"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy"></a>
+
+        <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu-navegacao" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+
+        <nav id="menu-navegacao" role="navigation">
+            <a href="#principal">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="">Sobre Nós</a>
+            <a href="#endereço">Contato</a>
+            <a href="#galeria">Galeria</a>
+            <a href="" id="destaque">Reservar Mesa</a>
+        </nav>
     </header>
-    <menu>
-            <div>
-                <a href="#inicio">Início</a>
-                <a href="cardapio.html">Cardápio</a>
-                <a href="">Sobre Nós</a>
-                <a href="#galeria">Galeria</a>
-                <a href="#endereço">Contato</a>
-            </div>
-            <div><a href="" id="destaque">Reservar Mesa</a></div>
-        </menu>
     <main>
         <section id="principal" class="hidden">
             <h1>Comida Brasileira com Alma e Sabor</h1>
@@ -121,7 +124,7 @@
         </section>
     </main>
     <footer>
-            <div><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy"></div>
+            <div><a href="#principal"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy"></a></div>
             <div>
                 <h1>Nosso Endereço:</h1>
                 <a target="_blank" href="https://www.google.com/maps/place/R.+Volunt%C3%A1rios+da+P%C3%A1tria,+456+-+Botafogo,+Rio+de+Janeiro+-+RJ,+22270-010/@-22.9558107,-43.1973507,17z/data=!3m1!4b1!4m5!3m4!1s0x997fdf42985e79:0x44e6cad39a8698e4!8m2!3d-22.9558107!4d-43.1973507?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D">

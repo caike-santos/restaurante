@@ -7,6 +7,12 @@
     width: 250px; /* Logo menor para caber na barra */
     border-radius: 50%;
 }
+p, a, button{ /* Adicionado button */
+    font-family: "Nunito Sans", sans-serif;
+}
+h1, h2{
+    font-family: "Arvo", serif;
+}
 header p{
     font-family: "Nunito Sans", sans-serif;
     color: white;

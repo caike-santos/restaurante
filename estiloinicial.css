@@ -166,7 +166,6 @@ header.active #btn-mobile {
 /* ########################################## */
 
 main{
-    margin-bottom: 10px;
     position: relative; /* <<< ADICIONE ESTA LINHA */
     z-index: 1;
 }

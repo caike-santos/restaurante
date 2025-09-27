@@ -35,7 +35,10 @@ header .logo img {
     width: 100px; /* Logo menor para caber na barra */
     border-radius: 50%;
 }
-
+header img:hover {
+    transform: scale(1.05);
+    transition: all .5s;
+}
 /* --- ESTILOS DA NAVEGAÇÃO --- */
 #menu-navegacao a{
     text-decoration: none;

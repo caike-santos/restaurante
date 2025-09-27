@@ -1,25 +1,23 @@
+/* =========================================== */
+/* ESTILOS DE BASE (PARA DESKTOP E TELAS GRANDES) */
+/* =========================================== */
+
 * {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
-    header  img {
-    width: 250px; /* Logo menor para caber na barra */
-    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-p, a, button{ /* Adicionado button */
-    font-family: "Nunito Sans", sans-serif;
-}
-h1, h2{
+
+h1, h2 {
     font-family: "Arvo", serif;
 }
-header p{
+
+p, a, button {
     font-family: "Nunito Sans", sans-serif;
-    color: white;
-    font-size: 1rem;
-    margin-top: 5px;
 }
-    #principal{
+
+/* --- SEÇÃO PRINCIPAL (HEADER) --- */
+#principal {
     background-color: #F5EADA;
     padding: 80px 20px;
     text-align: center;
@@ -30,86 +28,179 @@ header p{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Adicionado para melhor centralização vertical */
     gap: 30px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
-#principal h1{
-    font-size: 2.5rem;
+
+#principal img {
+    width: 250px; /* Logo grande para desktop */
+    border-radius: 50%;
+}
+
+#principal h1 {
+    font-size: 2.5rem; /* Título grande para desktop */
     color: white;
 }
-#principal h2{
+
+#principal h2 {
     font-size: 1.2rem;
     color: white;
 }
-#principal a{
+
+header p {
+    color: white;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+#principal a {
     text-decoration: none;
     background-color: rgb(170, 67, 49);
     color: white;
     border-radius: 5px;
     font-weight: bold;
     padding: 10px 20px;
-}
-#principal a:hover{
-    color: black;
-    transform: translateY(-3px);
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
-   main{
-    width: 70vw;
+#principal a:hover {
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+main {
+    width: 70vw; /* Largura base para desktop */
+    max-width: 960px; /* Adicionado um max-width para não ficar gigante em telas ultra-wide */
     margin: 50px auto;
     text-align: center;
     background-color: #F5EADA;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: "Nunito Sans", sans-serif;
     color: #333;
-   }
-    main p{ /* Especificando para não afetar o header */
-        padding: 10px;
-        margin: 10px 0;
-        line-height: 1.6;
-        color: #444;
-        text-align: justify;
-        font-size: 1.1rem;
-        font-weight: normal;
-    }
-    main h2{
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #222;
-    }
+}
 
-    footer {
+main h2 {
+    font-size: 2rem; /* Título grande para desktop */
+    margin-bottom: 20px;
+    color: #222;
+}
+
+main p {
+    padding: 10px;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer {
     background-color: #695643;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;  
-    text-align: center;
+    flex-direction: row; /* Layout em linha é o padrão para desktop */
+    justify-content: space-around;
+    text-align: left;
     gap: 20px;
 }
-@media (min-width: 768px) {
-    footer {
-        flex-direction: row;
-        justify-content: space-around;
-        text-align: left;
-    }
-}
+
 footer img {
     width: 100px;
     border-radius: 50%;
 }
+
 footer h1, footer p {
     font-size: .9rem;
     color: white;
 }
+
 footer a {
     text-decoration: none;
     color: white;
 }
+
 footer a:hover {
     color: blue;
+}
+
+
+/* ======================================================= */
+/* MEDIA QUERIES (AJUSTES PARA TELAS MENORES) */
+/* ======================================================= */
+
+/* Para tablets (telas com largura máxima de 1024px) */
+@media (max-width: 1024px) {
+    main {
+        width: 85vw; /* Container principal fica um pouco mais largo */
+    }
+
+    #principal h1 {
+        font-size: 2.2rem; /* Diminui um pouco a fonte principal */
+    }
+}
+
+
+/* Para tablets menores e celulares grandes (largura máxima de 768px) */
+@media (max-width: 768px) {
+    #principal img {
+        width: 200px; /* Diminui o logo */
+    }
+
+    #principal h1 {
+        font-size: 2rem; /* Diminui mais a fonte */
+    }
+
+    main {
+        width: 90%; /* Usa porcentagem para um melhor ajuste */
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    main h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Altera o footer para o layout de coluna */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+/* Para celulares (largura máxima de 480px) */
+@media (max-width: 480px) {
+    #principal {
+        gap: 20px; /* Diminui o espaçamento */
+        padding: 20px 5px; /* Menos padding */
+    }
+
+    #principal img {
+        width: 150px; /* Logo ainda menor */
+    }
+
+    #principal h1 {
+        font-size: 1.8rem; /* Fonte adequada para celular */
+    }
+
+    main h2 {
+        font-size: 1.4rem;
+    }
+
+    main p {
+        font-size: 1rem; /* Texto do parágrafo um pouco menor */
+        text-align: left; /* Justificado pode criar espaços estranhos em telas finas */
+    }
+    footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }

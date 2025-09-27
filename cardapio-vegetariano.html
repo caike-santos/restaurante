@@ -16,26 +16,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.ico" type="image/x-icon">
 </head>
-<body>
+<body id="body">
 
-    <header id="inicio">
-        <a href="index.html"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo"></a>
-        <!-- <a href="index.html" class="botao-voltar">← Voltar ao Menu Principal</a> -->
-        <h1>Menu Vegetariano</h1>
-        <p>Opções saborosas sem carne.</p>
+    <header id="header" role="banner">
+        <a href="#body" class="logo"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy"></a>
+
+        <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu-navegacao" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+
+        <nav id="menu-navegacao" role="navigation">
+            <a href="#body">Início</a>
+            <a href="#entradas-veg">Entradas</a>
+            <a href="#principais-veg">Pratos Principais</a>
+            <a href="#reservar-mesa" id="destaque">Reservar Mesa</a>
+        </nav>
     </header>
-    <menu class="hidden">
-            <div>
-                <a href="#inicio">Início</a>
-                <a href="#entradas-veg">Entradas</a>
-                <a href="#principais-veg">Pratos Principais</a>
-            </div>
-            <div>
-                <a href="cardapio.html">Voltar ao Cardápio</a>
-                <a href="" id="destaque">Reservar Mesa</a>
-            </div>
-        </menu>
-
+         <section id="principal" class="hidden">
+                <h1>Nosso Cardápio Vegetariano</h1>
+                <p>Descubra os sabores autênticos da nossa culinária, preparados com ingredientes frescos e receitas tradicionais.</p>
+            <a href="cardapio.html">Voltar ao Cardápio Principal</a>
+        </section>
     <main>
         <section id="entradas-veg" class="hidden">
             <h2>Entradas</h2>
@@ -144,27 +145,6 @@
                 <p>&copy; 2025 Fogo&Brasa</p>
             </div>
     </footer>
-    <script>
-        // =========================
-// CÓDIGO DA ANIMAÇÃO SCROLL
-// =========================
-
-const observer = new IntersectionObserver((entries) => {
-    // Itera sobre cada 'entrada' (elemento) que o observador está vigiando
-    entries.forEach((entry) => {
-        // Se o elemento está agora visível na tela...
-        if (entry.isIntersecting) {
-            // ...adiciona a classe 'show' para torná-lo visível.
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-// Seleciona todos os elementos no HTML que têm a classe 'hidden'
-const hiddenElements = document.querySelectorAll('.hidden');
-
-// Manda o observador vigiar cada um desses elementos
-hiddenElements.forEach((el) => observer.observe(el));
-    </script>
+     <script src="scriptcardapio.js"></script>
 </body>
 </html>

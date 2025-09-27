@@ -47,7 +47,7 @@ header .logo img {
 }
 
 #menu-navegacao a:hover{
-    color: red;
+    color: white;
     transform: translateY(-3px);
     transition: all .5s;
 }
@@ -56,9 +56,6 @@ header .logo img {
     background-color: rgb(170, 67, 49);
     color: white;
     border-radius: 5px;
-}
-#destaque:hover{
-    color: black;
 }
 
 /* --- BOTÃO MOBILE (ESCONDIDO POR PADRÃO) --- */

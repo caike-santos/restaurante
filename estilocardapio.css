@@ -30,6 +30,42 @@ header img {
     display: block;
     margin: auto;
 }
+/* --- ESTILOS DO HEADER --- */
+header{
+    /* Removido o conteúdo do header antigo para dar lugar ao novo menu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 35px 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: sticky; /* Menu fixo no topo */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all .5s;
+}
+
+header .logo img {
+    width: 100px; /* Logo menor para caber na barra */
+    border-radius: 50%;
+}
+
+/* --- ESTILOS DA NAVEGAÇÃO --- */
+#menu-navegacao a{
+    text-decoration: none;
+    margin-right: 15px;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#menu-navegacao a:hover{
+    color: white;
+    transform: translateY(-3px);
+    transition: all .5s;
+}
 
 /* --- CORREÇÃO AQUI --- */
 #menu-vegetariano {
@@ -50,12 +86,19 @@ header img {
     transform: translate(-3px, -3px);
     color: black;
 }
+#destaque{
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+}
+#destaque:hover{
+    color: white;
+}
 
 /* --- CORREÇÃO AQUI --- */
-header {
+/* header {
     display: flex;
     flex-flow: column;
-    /* justify-content: space-evenly; */ /* Removido para melhor centralização */
     gap: 20px;
     text-align: center;
     padding: 40px 20px;
@@ -68,19 +111,18 @@ header {
     width: 100%;
     justify-content: center;
     align-items: center;
-}
+} */
 
-header p {
+/* header p {
     font-size: 1.2em;
     color: white;
 }
 
 header h1 {
-    /* Mínimo de 2em, ideal de 5vw (5% da largura da tela), máximo de 2.5em */
     font-size: clamp(2em, 5vw, 2.5em);
     color: #c4c3c3;
     margin-bottom: 10px;
-}
+} */
 
 section h2 {
     /* Mínimo de 1.5em, ideal de 4vw, máximo de 2em */
@@ -103,7 +145,7 @@ menu{
     top: 0;
     z-index: 1;
 }
-menu a{
+/* menu a{
     text-decoration: none;
     margin-right: 10px;
     color: black;
@@ -115,19 +157,145 @@ menu a:hover{
     transition: all .5s;
 }
 menu a:active {
-    transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
+    transform: scale(0.98);
+} */
+ @media (max-width: 768px) {
+    /* 1. O botão hambúrguer aparece */
+    #btn-mobile {
+        display: flex;
+        align-items: center;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+         margin-left: auto; 
+    }
+
+    #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #hamburger::after, #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    /* 2. O menu de navegação some */
+    #menu-navegacao {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px; /* Altura do header */
+        right: 0px;
+        background: burlywood;
+        height: 0; /* Começa fechado */
+        transition: height .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #menu-navegacao a {
+        display: block;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    
+    /* 3. Estilos para quando o menu estiver ATIVO (classe .active) */
+    header.active #menu-navegacao {
+        height: calc(100vh - 70px); /* Ocupa a altura da tela */
+        visibility: visible;
+        overflow-y: auto;
+    }
+    
+    header.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    header.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    header.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    #menu-navegacao a {
+    text-align: center;
+    font-size: 1.2rem; /* Aumenta um pouco a fonte para toque */
+}
+
+/* Esconde o logo quando o menu está aberto para um visual mais limpo */
+header.active .logo {
+    display: none;
+}
+
+/* Garante que o botão X fique posicionado corretamente mesmo sem o logo */
+header.active #btn-mobile {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    z-index: 1001; /* Garante que fique acima do menu */
+}
 }
 main {
     max-width: 1000px;
     margin: 20px auto;
     padding: 0 20px;
 }
-
+#principal{
+    width: 100%;
+    background-color: #F5EADA;
+    padding: 80px 20px;
+    text-align: center;
+    background-image: url(imagens/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+#principal h1{
+    margin-top: 40px;
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 40px;
+}
+#principal p{
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 40px;
+}
+#principal a{
+    text-decoration: none;
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+#principal a:hover{
+    color: black;
+    transform: translateY(-3px);
+    transition: all .5s;
+}
 section {
     margin-bottom: 40px;
     background-color: #F5EADA;
     padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .cardapio-itens {
@@ -341,4 +509,7 @@ footer a:hover {
 .show {
   opacity: 1;
   transform: translateY(0);
+}
+section[id] {
+    scroll-margin-top: 180px; /* Ajuste este valor se a altura do seu menu mudar */
 }

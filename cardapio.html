@@ -16,29 +16,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.ico" type="image/x-icon">
 </head>
-<body>
-    <header id="inicio">
-        <a href="index.html"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo"></a>
-        <p> Um lugar para saborear momentos inesquecíveis</p>
-        <nav>
-    <a id="menu-vegetariano" href="cardapio-vegetariano.html" class="botao-menu">Menu Vegetariano</a>
+<body id="body">
+     <header id="header" role="banner">
+        <a href="#body" class="logo"><img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy"></a>
+
+        <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu-navegacao" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+
+        <nav id="menu-navegacao" role="navigation">
+            <a href="#body">Início</a>
+            <a href="#entradas">Entradas</a>
+            <a href="#principais">Pratos Principais</a>
+            <a href="#sobremesas">Sobremesas</a>
+            <a href="#bebidas">Bebidas</a>
+            <a href="#carta-vinhos">Carta de Vinhos</a>
+            <a href="index.html">Voltar</a>
+            <a href="#reservar-mesa" id="destaque">Reservar Mesa</a>
         </nav>
     </header>
-    <menu class="hidden">
-            <div>
-                <a href="#inicio">Início</a>
-                <a href="#entradas">Entradas</a>
-                <a href="#principais">Pratos Principais</a>
-                <a href="#sobremesas">Sobremesas</a>
-                <a href="#bebidas">Bebidas</a>
-                <a href="#carta-vinhos">Vinhos</a>
-            </div>
-            <div>
-                <a href="index.html">Voltar ao Início</a>
-                <a href="" id="destaque">Reservar Mesa</a>
-            </div>
-        </menu>
-    <main>
+    <section id="principal" class="hidden">
+             <h1>Nosso Cardápio</h1>
+            <p>Descubra os sabores autênticos da nossa culinária, preparados com ingredientes frescos e receitas tradicionais.</p>
+            <a href="cardapio-vegetariano.html">Menu Vegetariano</a>
+        </section>
+    <main class="hidden">
         
      <section id="entradas" class="hidden">
         <h2>Entradas</h2>
@@ -239,7 +241,7 @@
         <h2>Bebidas</h2>
         <div class="cardapio-itens">
             <div class="item-card">
-                <img src="imagens/jpg" alt="Suco Natural">
+                <img src="imagens/suco.jpg" alt="Suco Natural">
                 <div class="itens-info">
                     <h3> Suco Natural</h3>
                     <p class="descricao"> Suco natural feito na hora dos seguintes sabores: Laranja, Limão, Abacaxi e Uva.  (500 ml)</p>
@@ -248,7 +250,7 @@
             </div>
 
             <div class="item-card">
-                <img src="jpg" alt="Refrigerante">
+                <img src="imagens/refrigerante.jpg" alt="Refrigerante">
                 <div class="itens-info">
                     <h3>Refrigerante</h3>
                     <p class="descricao"> Pepsi, Coca-Cola e Guaraná. Todos com opção zero.(1 lata)</p>
@@ -257,7 +259,7 @@
             </div>
 
             <div class="item-card">
-                <img src="jpg" alt="Cerveja-garrafa">
+                <img src="imagens/cerveja.jpg" alt="Cerveja-garrafa">
                 <div class="itens-info">
                     <h3>Cerveja</h3>
                     <p class="descricao">Heineken, Budweiser e Corona. Todos com opção zero ácool.(1 garrafa)</p>
@@ -312,27 +314,6 @@
                 <p>&copy; 2025 Fogo&Brasa</p>
             </div>
     </footer> 
-    <script>
-        // =========================
-// CÓDIGO DA ANIMAÇÃO SCROLL
-// =========================
-
-const observer = new IntersectionObserver((entries) => {
-    // Itera sobre cada 'entrada' (elemento) que o observador está vigiando
-    entries.forEach((entry) => {
-        // Se o elemento está agora visível na tela...
-        if (entry.isIntersecting) {
-            // ...adiciona a classe 'show' para torná-lo visível.
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-// Seleciona todos os elementos no HTML que têm a classe 'hidden'
-const hiddenElements = document.querySelectorAll('.hidden');
-
-// Manda o observador vigiar cada um desses elementos
-hiddenElements.forEach((el) => observer.observe(el));
-    </script>
+    <script src="scriptcardapio.js"></script>
 </body>
 </html>

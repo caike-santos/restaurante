@@ -1,0 +1,109 @@
+* {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    header  img {
+    width: 250px; /* Logo menor para caber na barra */
+    border-radius: 50%;
+}
+header p{
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+    #principal{
+    background-color: #F5EADA;
+    padding: 80px 20px;
+    text-align: center;
+    background-image: url(imagens/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100vw;
+    height: 100vh;
+}
+#principal h1{
+    font-size: 2.5rem;
+    color: white;
+}
+#principal h2{
+    font-size: 1.2rem;
+    color: white;
+}
+#principal a{
+    text-decoration: none;
+    background-color: rgb(170, 67, 49);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+#principal a:hover{
+    color: black;
+    transform: translateY(-3px);
+    transition: all .5s;
+}
+
+   main{
+    width: 70vw;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #F5EADA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Nunito Sans", sans-serif;
+    color: #333;
+   }
+    main p{ /* Especificando para não afetar o header */
+        padding: 10px;
+        margin: 10px 0;
+        line-height: 1.6;
+        color: #444;
+        text-align: justify;
+        font-size: 1.1rem;
+        font-weight: normal;
+    }
+    main h2{
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    footer {
+    background-color: #695643;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    text-align: center;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+}
+footer img {
+    width: 100px;
+    border-radius: 50%;
+}
+footer h1, footer p {
+    font-size: .9rem;
+    color: white;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    color: blue;
+}

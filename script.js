@@ -50,7 +50,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } 
-        // Opcional: para a animação acontecer sempre que rolar para cima e para baixo
+       
         // else {
         //     entry.target.classList.remove('show');
         // }

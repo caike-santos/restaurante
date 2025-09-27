@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="formResponsividade.css">
+    <script src="form.js"></script>
+    <link rel="shortcut icon" href="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Faça sua reserva</title>
+  </head>
+  <body>
+         <section id="principal">
+                 <img src="imagens/Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" loading="lazy">
+            <h1>RESERVE SEU MOMENTO</h1>
+            <p class="destaque-sabor">de sabor</p>
+
+            <a href="index.html">Voltar a Página Inicial</a>
+        </section>
+          <br />
+        <section id="formulario">
+          <div class="text">
+            <h2>Formulário de Reserva</h2>
+            <p>Preencha o formulário abaixo para reservar sua mesa conosco. Estamos ansiosos para recebê-lo!</p>
+          </div>
+          <div class="conteiner" class="hidden">
+          <form onsubmit="return enviar()">
+            <div class="form-group">
+              <label for="input_nome_cli">Nome</label>
+              <input class="sla" type="text" id="input_nome_cli" required />
+            </div>
+            <div class="form-group">
+              <label for="input_email_cli">Email</label>
+              <input class="sla" type="email" id="input_email_cli" required />
+            </div>
+            <div class="form-group">
+              <label for="input_telefone_cli">Telefone</label>
+              <input class="sla" type="tel" id="input_telefone_cli" required />
+            </div>
+            <div class="form-group">
+              <label for="input_data_reserva">Dia da reserva</label>
+              <input class="sla" type="date" id="input_data_reserva" required />
+            </div>
+            <div class="form-group">
+              <label for="input_numero_pessoas">Número de pessoas</label>
+              <input class="sla" type="number" id="input_numero_pessoas" required max="10"/>
+            </div>
+            <div class="form-group">
+              <label for="horas">Horário</label>
+              <select id="horas" required>
+                <option value="" selected disabled>Escolha um horário</option>
+                <option value="9">09:00</option>
+                <option value="9.5">09:30</option>
+                <option value="10">10:00</option>
+                <option value="10.5">10:30</option>
+                <option value="11">11:00</option>
+              </select>
+            </div>
+            <input type="submit" value="Fazer Reserva" />
+          </form>
+        </section>
+
+    <footer>
+      <div>
+        <img src="Gemini_Generated_Image_2aq6u62aq6u62aq6.png" alt="logo" />
+      </div>
+      <div>
+        <h1>Nosso Endereço:</h1>
+        <a
+          target="_blank"
+          href="https://www.google.com/maps/place/R.+Volunt%C3%A1rios+da+P%C3%A1tria,+456+-+Botafogo,+Rio+de+Janeiro+-+RJ,+22270-010/@-22.9558107,-43.1973507,17z/data=!3m1!4b1!4m5!3m4!1s0x997fdf42985e79:0x44e6cad39a8698e4!8m2!3d-22.9558107!4d-43.1973507?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D"
+        >
+          <p>
+            Rua Voluntários da Pátria, 456-Botafogo, Rio de Janeiro-RJ,22270-000
+          </p>
+        </a>
+      </div>
+      <div>
+        <h1>Contato e Reservas:</h1>
+        <p>(21) 98756-4321(WhatsApp)</p>
+        <p>contato@fogoebrasa.com.br</p>
+      </div>
+      <div>
+        <p>&copy; 2025 Fogo&Brasa</p>
+      </div>
+    </footer>
+  </body>
+</html>

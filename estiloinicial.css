@@ -3,7 +3,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box; /* CORRIGIDO */
+    box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
@@ -11,13 +11,13 @@ html {
 h1, h2{
     font-family: "Arvo", serif;
 }
-p, a, button{ /* Adicionado button */
+p, a, button{ 
     font-family: "Nunito Sans", sans-serif;
 }
 
-/* --- ESTILOS DO HEADER --- */
+
 header{
-    /* Removido o conteúdo do header antigo para dar lugar ao novo menu */
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,14 +32,14 @@ header{
 }
 
 header .logo img {
-    width: 100px; /* Logo menor para caber na barra */
+    width: 100px; 
     border-radius: 50%;
 }
 header img:hover {
     transform: scale(1.05);
     transition: all .5s;
 }
-/* --- ESTILOS DA NAVEGAÇÃO --- */
+
 #menu-navegacao a{
     text-decoration: none;
     margin-right: 15px;
@@ -61,17 +61,15 @@ header img:hover {
     border-radius: 5px;
 }
 
-/* --- BOTÃO MOBILE (ESCONDIDO POR PADRÃO) --- */
+
 #btn-mobile {
     display: none;
 }
 
 
-/* ########################################## */
-/* ### RESPONSIVIDADE (A MÁGICA ACONTECE AQUI) ### */
-/* ########################################## */
+
 @media (max-width: 768px) {
-    /* 1. O botão hambúrguer aparece */
+    
     #btn-mobile {
         display: flex;
         align-items: center;
@@ -100,15 +98,15 @@ header img:hover {
         position: relative;
     }
 
-    /* 2. O menu de navegação some */
+  
     #menu-navegacao {
         display: block;
         position: absolute;
         width: 100%;
-        top: 70px; /* Altura do header */
+        top: 70px;
         right: 0px;
         background: burlywood;
-        height: 0; /* Começa fechado */
+        height: 0;
         transition: height .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         z-index: 1000;
         visibility: hidden;
@@ -122,9 +120,9 @@ header img:hover {
         border-bottom: 2px solid rgba(0, 0, 0, .05);
     }
     
-    /* 3. Estilos para quando o menu estiver ATIVO (classe .active) */
+   
     header.active #menu-navegacao {
-        height: calc(100vh - 70px); /* Ocupa a altura da tela */
+        height: calc(100vh - 70px);
         visibility: visible;
         overflow-y: auto;
     }
@@ -143,33 +141,30 @@ header img:hover {
     }
     #menu-navegacao a {
     text-align: center;
-    font-size: 1.2rem; /* Aumenta um pouco a fonte para toque */
+    font-size: 1.2rem;
 }
 
-/* Esconde o logo quando o menu está aberto para um visual mais limpo */
+
 header.active .logo {
     display: none;
 }
 
-/* Garante que o botão X fique posicionado corretamente mesmo sem o logo */
+
 header.active #btn-mobile {
     position: absolute;
     right: 30px;
     top: 15px;
-    z-index: 1001; /* Garante que fique acima do menu */
+    z-index: 1001;
 }
 }
 
 
-/* ########################################## */
-/* ### SEUS ESTILOS ANTIGOS (MANTIDOS) ### */
-/* ########################################## */
 
 main{
-    position: relative; /* <<< ADICIONE ESTA LINHA */
+    position: relative; 
     z-index: 1;
 }
-main h1, main h2, main a, main p{ /* Especificando para não afetar o header */
+main h1, main h2, main a, main p{ 
     padding: 10px;
 }
 
@@ -221,7 +216,7 @@ main h1, main h2, main a, main p{ /* Especificando para não afetar o header */
 #pratos img{
     width: 275px;
     height: 183px;
-    object-fit: cover; /* Garante que a imagem não distorça */
+    object-fit: cover; 
 }
 #pratos a{
     display: inline-block;
@@ -246,9 +241,9 @@ main h1, main h2, main a, main p{ /* Especificando para não afetar o header */
 
 #p1, #p2 {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
-    justify-content: center; /* Centraliza os itens */
-    gap: 20px; /* Espaçamento entre os pratos */
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; 
     margin-bottom: 20px;
 }
 
@@ -330,7 +325,7 @@ footer a:hover {
 iframe{
     display: block;
     margin: auto;
-    max-width: 100%; /* Garante que o mapa seja responsivo */
+    max-width: 100%;
 }
 #mapa{
     background-color: #F5EADA;
@@ -400,5 +395,5 @@ iframe{
   transform: translateY(0);
 }
 section[id] {
-    scroll-margin-top: 180px; /* Ajuste este valor se a altura do seu menu mudar */
+    scroll-margin-top: 180px; 
 }

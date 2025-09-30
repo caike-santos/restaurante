@@ -6,7 +6,7 @@ function enviar(){
     const numPessoas = document.getElementById("input_numero_pessoas");
     const hora = document.getElementById("horas");
 
-    // Remove mensagens anteriores
+   
     const campos = [name, email, telefone, dataReserva, numPessoas, hora];
     campos.forEach(campo => campo.classList.remove("erro"));
 
@@ -49,22 +49,20 @@ function enviar(){
     window.alert("Reserva realizada com sucesso!");
     return true;
 }
-// Garante que o código só rode depois que a página carregar
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // IDs ATUALIZADOS para corresponder ao seu HTML
+   
     const dataInput = document.getElementById('input_data_reserva');
     const horarioSelect = document.getElementById('horas');
 
-    // Se não encontrar os elementos na página, não faz nada.
+  
     if (!dataInput || !horarioSelect) {
         console.error("Não foi possível encontrar os elementos do formulário. Verifique os IDs.");
         return;
     }
 
-    // 1. DEFINA AQUI OS HORÁRIOS DE FUNCIONAMENTO
-    // Dias da semana: 0 = Domingo, 1 = Segunda, 2 = Terça, etc.
-    // null significa que está fechado.
+   
     const horariosFuncionamento = {
         0: { start: 12, end: 18 }, // Domingo: 12:00 até 17:30
         1: null,                   // Segunda: Fechado
@@ -75,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         6: { start: 12, end: 23 }  // Sábado: 12:00 até 22:30
     };
 
-    const INTERVALO_MINUTOS = 30; // Intervalo entre os horários
+    const INTERVALO_MINUTOS = 30; 
 
-    // 2. FUNÇÃO QUE ATUALIZA OS HORÁRIOS
+    
     function atualizarHorariosDisponiveis() {
-        horarioSelect.innerHTML = ''; // Limpa os horários antigos
+        horarioSelect.innerHTML = ''; 
         const dataSelecionada = dataInput.value;
 
         if (!dataSelecionada) {
@@ -116,10 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. ADICIONA O "OUVINTE" PARA MUDANÇAS NA DATA
+   
     dataInput.addEventListener('change', atualizarHorariosDisponiveis);
 
-    // Inicializa o campo de horário desabilitado
+   
     atualizarHorariosDisponiveis();
 });
 

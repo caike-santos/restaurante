@@ -1,6 +1,4 @@
-/* =========================================== */
-/* ESTILOS DE BASE (PARA DESKTOP E TELAS GRANDES) */
-/* =========================================== */
+
 
 * {
     box-sizing: border-box;
@@ -16,7 +14,7 @@ p, a, button {
     font-family: "Nunito Sans", sans-serif;
 }
 
-/* --- SEÇÃO PRINCIPAL (HEADER) --- */
+
 #principal {
     background-color: #F5EADA;
     padding: 80px 20px;
@@ -28,19 +26,19 @@ p, a, button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Adicionado para melhor centralização vertical */
+    justify-content: center; 
     gap: 30px;
     width: 100%;
     height: 100vh;
 }
 
 #principal img {
-    width: 250px; /* Logo grande para desktop */
+    width: 250px;
     border-radius: 50%;
 }
 
 #principal h1 {
-    font-size: 2.5rem; /* Título grande para desktop */
+    font-size: 2.5rem; 
     color: white;
 }
 
@@ -70,10 +68,10 @@ header p {
     transform: translateY(-3px);
 }
 
-/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+
 main {
-    width: 70vw; /* Largura base para desktop */
-    max-width: 960px; /* Adicionado um max-width para não ficar gigante em telas ultra-wide */
+    width: 70vw; 
+    max-width: 960px; 
     margin: 50px auto;
     text-align: center;
     background-color: #F5EADA;
@@ -84,7 +82,7 @@ main {
 }
 
 main h2 {
-    font-size: 2rem; /* Título grande para desktop */
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #222;
 }
@@ -99,12 +97,12 @@ main p {
     font-weight: normal;
 }
 
-/* --- RODAPÉ (FOOTER) --- */
+
 footer {
     background-color: #695643;
     padding: 20px;
     display: flex;
-    flex-direction: row; /* Layout em linha é o padrão para desktop */
+    flex-direction: row; 
     justify-content: space-around;
     text-align: left;
     gap: 20px;
@@ -130,34 +128,30 @@ footer a:hover {
 }
 
 
-/* ======================================================= */
-/* MEDIA QUERIES (AJUSTES PARA TELAS MENORES) */
-/* ======================================================= */
 
-/* Para tablets (telas com largura máxima de 1024px) */
 @media (max-width: 1024px) {
     main {
-        width: 85vw; /* Container principal fica um pouco mais largo */
+        width: 85vw; 
     }
 
     #principal h1 {
-        font-size: 2.2rem; /* Diminui um pouco a fonte principal */
+        font-size: 2.2rem; 
     }
 }
 
 
-/* Para tablets menores e celulares grandes (largura máxima de 768px) */
+
 @media (max-width: 768px) {
     #principal img {
-        width: 200px; /* Diminui o logo */
+        width: 200px;
     }
 
     #principal h1 {
-        font-size: 2rem; /* Diminui mais a fonte */
+        font-size: 2rem;
     }
 
     main {
-        width: 90%; /* Usa porcentagem para um melhor ajuste */
+        width: 90%; 
         margin: 30px auto;
         padding: 15px;
     }
@@ -166,7 +160,7 @@ footer a:hover {
         font-size: 1.6rem;
     }
 
-    /* Altera o footer para o layout de coluna */
+    
     footer {
         flex-direction: column;
         align-items: center;
@@ -175,19 +169,19 @@ footer a:hover {
 }
 
 
-/* Para celulares (largura máxima de 480px) */
+
 @media (max-width: 480px) {
     #principal {
-        gap: 20px; /* Diminui o espaçamento */
-        padding: 20px 5px; /* Menos padding */
+        gap: 20px; 
+        padding: 20px 5px; 
     }
 
     #principal img {
-        width: 150px; /* Logo ainda menor */
+        width: 150px; 
     }
 
     #principal h1 {
-        font-size: 1.8rem; /* Fonte adequada para celular */
+        font-size: 1.8rem; 
     }
 
     main h2 {
@@ -195,8 +189,8 @@ footer a:hover {
     }
 
     main p {
-        font-size: 1rem; /* Texto do parágrafo um pouco menor */
-        text-align: left; /* Justificado pode criar espaços estranhos em telas finas */
+        font-size: 1rem; 
+        text-align: left;
     }
     footer{
         flex-direction: column;

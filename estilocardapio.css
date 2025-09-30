@@ -9,7 +9,7 @@ html {
 }
 
 h1, h2, h3, h4 {
-    /* font-family: "Josefin Sans", sans-serif; */
+   
     font-family: "Arvo", serif;
 }
 
@@ -30,16 +30,16 @@ header img {
     display: block;
     margin: auto;
 }
-/* --- ESTILOS DO HEADER --- */
+
 header{
-    /* Removido o conteúdo do header antigo para dar lugar ao novo menu */
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: burlywood;
     padding: 35px 30px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: sticky; /* Menu fixo no topo */
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1002;
@@ -47,7 +47,7 @@ header{
 }
 
 header .logo img {
-    width: 100px; /* Logo menor para caber na barra */
+    width: 100px; 
     border-radius: 50%;
 }
 header img:hover {
@@ -55,7 +55,7 @@ header img:hover {
     transition: all .5s;
 }
 
-/* --- ESTILOS DA NAVEGAÇÃO --- */
+
 #menu-navegacao a{
     text-decoration: none;
     margin-right: 15px;
@@ -71,7 +71,7 @@ header img:hover {
     transition: all .5s;
 }
 
-/* --- CORREÇÃO AQUI --- */
+
 #menu-vegetariano {
     display: inline-block;
     font-size: 1.2rem;
@@ -83,7 +83,7 @@ header img:hover {
     border-radius: 5px;
     padding: 8px;
     border: 2px solid rgb(170, 67, 49);
-    transition: all .5s; /* A transição deve estar no estado base */
+    transition: all .5s;
 }
 
 #menu-vegetariano:hover {
@@ -99,37 +99,9 @@ header img:hover {
     color: white;
 }
 
-/* --- CORREÇÃO AQUI --- */
-/* header {
-    display: flex;
-    flex-flow: column;
-    gap: 20px;
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    background-image: url(imagens/fundo.png);
-    background-size: cover;
-    background-position: bottom;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-} */
 
-/* header p {
-    font-size: 1.2em;
-    color: white;
-}
-
-header h1 {
-    font-size: clamp(2em, 5vw, 2.5em);
-    color: #c4c3c3;
-    margin-bottom: 10px;
-} */
 
 section h2 {
-    /* Mínimo de 1.5em, ideal de 4vw, máximo de 2em */
     font-size: clamp(1.5em, 4vw, 2em);
     text-align: center;
     color: #444;
@@ -149,25 +121,12 @@ menu{
     top: 0;
     z-index: 1;
 }
-/* menu a{
-    text-decoration: none;
-    margin-right: 10px;
-    color: black;
-}
 
-menu a:hover{
-    color: red;
-    transform: translate(-3px, -3px);
-    transition: all .5s;
-}
-menu a:active {
-    transform: scale(0.98);
-} */
  #btn-mobile {
     display: none;
 }
  @media (max-width: 768px) {
-    /* 1. O botão hambúrguer aparece */
+    
     #btn-mobile {
         display: flex;
         align-items: center;
@@ -196,15 +155,15 @@ menu a:active {
         position: relative;
     }
 
-    /* 2. O menu de navegação some */
+    
     #menu-navegacao {
         display: block;
         position: absolute;
         width: 100%;
-        top: 70px; /* Altura do header */
+        top: 70px; 
         right: 0px;
         background: burlywood;
-        height: 0; /* Começa fechado */
+        height: 0; 
         transition: height .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         z-index: 1000;
         visibility: hidden;
@@ -218,9 +177,9 @@ menu a:active {
         border-bottom: 2px solid rgba(0, 0, 0, .05);
     }
     
-    /* 3. Estilos para quando o menu estiver ATIVO (classe .active) */
+    
     header.active #menu-navegacao {
-        height: calc(100vh - 70px); /* Ocupa a altura da tela */
+        height: calc(100vh - 70px);
         visibility: visible;
         overflow-y: auto;
     }
@@ -239,20 +198,20 @@ menu a:active {
     }
     #menu-navegacao a {
     text-align: center;
-    font-size: 1.2rem; /* Aumenta um pouco a fonte para toque */
+    font-size: 1.2rem; 
 }
 
-/* Esconde o logo quando o menu está aberto para um visual mais limpo */
+
 header.active .logo {
     display: none;
 }
 
-/* Garante que o botão X fique posicionado corretamente mesmo sem o logo */
+
 header.active #btn-mobile {
     position: absolute;
     right: 30px;
     top: 15px;
-    z-index: 1001; /* Garante que fique acima do menu */
+    z-index: 1001; 
 }
 }
 main {
@@ -373,9 +332,9 @@ section {
 }
 
 .vinho-item {
-    display: flex; /* Usamos flexbox para o layout de coluna */
+    display: flex; 
     flex-direction: column;
-    align-items: flex-start; /* Alinha os itens à esquerda */
+    align-items: flex-start; 
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
@@ -389,16 +348,16 @@ section {
 .vinho-item .info {
     font-size: 0.9em;
     color: #888;
-    margin: 4px 0; /* Adiciona um pequeno espaçamento */
+    margin: 4px 0; 
 }
-/* O preço já está com a classe .preco, que será estilizada normalmente */
 
 
-/* AGORA, para telas maiores (tablets e desktops), voltamos ao layout de grade */
+
+
 @media (min-width: 768px) {
     .vinho-item {
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr; /* Colunas flexíveis em vez de pixels */
+        grid-template-columns: 1fr 2fr 1fr; 
         align-items: center;
         padding: 5px 0;
         margin-bottom: 10px;
@@ -406,31 +365,31 @@ section {
     }
 
     .vinho-item .info {
-        margin: 0; /* Remove a margem extra */
+        margin: 0; 
     }
 }
 
-/* --- CORREÇÃO AQUI --- */
+
 footer {
     background-color: #695643;
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Empilha os itens */
-    align-items: center;   /* Centraliza tudo */
+    flex-direction: column; 
+    align-items: center;   
     text-align: center;
-    gap: 20px; /* Adiciona um espaço entre os itens empilhados */
+    gap: 20px; 
 }
 
-/* Para telas maiores, volta ao layout original */
+
 @media (min-width: 768px) {
     footer {
-        flex-direction: row; /* Itens lado a lado */
+        flex-direction: row;
         justify-content: space-around;
         text-align: left;
     }
 }
 
-/* Essas regras foram movidas para fora para não se repetirem */
+
 footer img {
     width: 100px;
     border-radius: 50%;
@@ -518,5 +477,5 @@ footer a:hover {
   transform: translateY(0);
 }
 section[id] {
-    scroll-margin-top: 180px; /* Ajuste este valor se a altura do seu menu mudar */
+    scroll-margin-top: 180px; 
 }
